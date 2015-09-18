@@ -1,15 +1,21 @@
-function asd(){
-	console.log(1);
-	function bdf(){
-		console.log(2);
-	}
-	bdf();
-}
+define(function(require, exports, module) {
 
-function dd(){
-	console.log(1);
-	function ff(){
-		console.log(2);
-	}
-	ff();
-}
+	var $ = require('jquery');
+	
+	
+});
+seajs.config({
+	alias: {
+		"jquery": "jquery-sea-2.1.4.min.js",
+		"$": "jquery-1.11.0",
+		"livereload": "http://127.0.0.1:35729/livereload",
+		"index": "./jsdev/index"
+	},
+	// 预加载项
+	preload: [
+		'livereload'
+	],
+});
+
+// 加载入口模块
+seajs.use("index");
