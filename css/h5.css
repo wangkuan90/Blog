@@ -276,7 +276,7 @@ header {
         margin-top: -5px; }
 
 section {
-  background: url(../img/banner_top.jpg) top center;
+  background: url(../material/img/banner_top.jpg) top center;
   height: 265px;
   overflow: hidden; }
   section .center-div {
@@ -307,7 +307,7 @@ section {
       overflow: hidden;
       margin-top: 55px;
       margin-right: 110px;
-      background: url(../img/photo.jpeg) no-repeat;
+      background: url(../material/img/photo.jpeg) no-repeat;
       background-size: contain; }
 
 footer {
@@ -317,3 +317,23 @@ footer {
     width: 960px;
     margin: 0px auto;
     height: 100%; }
+    footer div p {
+      padding: 10px;
+      font-size: 14px;
+      color: #756F71; }
+      footer div p a {
+        margin: 5px;
+        color: #756F71; }
+      footer div p .top {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        background: url(../material/img/ico/arrow-up-c.png) no-repeat;
+        display: inline-block;
+        padding-top: 5px; }
+      footer div p .index {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        background: url(../material/img/ico/reply.png) no-repeat;
+        display: inline-block; }
