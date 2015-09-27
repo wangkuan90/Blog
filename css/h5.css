@@ -259,11 +259,13 @@ header {
     float: left;
     width: 60%;
     height: 100%; }
+    header .head-title .on {
+      color: #e15782; }
     header .head-title div {
       margin-top: 15px;
       margin-left: 10px;
       width: auto !important;
-      cursor: hand; }
+      cursor: pointer; }
       header .head-title div span {
         display: block;
         padding: 8px;
@@ -274,6 +276,8 @@ header {
         font-style: normal;
         text-align: center;
         margin-top: -5px; }
+  header video {
+    opacity: 0; }
 
 section {
   background: url(../material/img/banner_top.jpg) top center;
@@ -312,7 +316,8 @@ section {
 
 footer {
   height: 80px;
-  background-color: #F1F0EE; }
+  background-color: #F1F0EE;
+  clear: both; }
   footer div {
     width: 960px;
     margin: 0px auto;
@@ -324,16 +329,99 @@ footer {
       footer div p a {
         margin: 5px;
         color: #756F71; }
-      footer div p .top {
-        background-size: contain;
-        width: 20px;
+        footer div p a span {
+          float: left;
+          margin-right: 20px; }
+        footer div p a i {
+          background-size: contain;
+          width: 20px;
+          height: 20px;
+          display: block;
+          float: left; }
+        footer div p a .top {
+          background: url(../material/img/ico/arrow-up-c.png) no-repeat; }
+        footer div p a .index {
+          background: url(../material/img/ico/reply.png) no-repeat; }
+
+.body .index {
+  width: 960px;
+  margin: 0px auto; }
+  .body .index .top h2 {
+    background: url(../material/img/h_line.jpg) repeat-x 20px center; }
+    .body .index .top h2 p {
+      background: #fff;
+      width: 90px;
+      margin: 0; }
+      .body .index .top h2 p span {
+        color: #e15782; }
+  .body .index .blog-list {
+    background: url(../material/img/r_line.jpg) repeat-y right;
+    width: 740px;
+    float: left; }
+    .body .index .blog-list .item {
+      height: 200px;
+      margin-top: 25px; }
+      .body .index .blog-list .item h4 {
+        margin: 0;
+        height: 20px; }
+        .body .index .blog-list .item h4 a {
+          color: #f00;
+          float: left; }
+        .body .index .blog-list .item h4 i {
+          background: url(../material/img/ico/new.gif) no-repeat;
+          display: none;
+          height: 11px;
+          width: 28px;
+          background-size: contain;
+          float: left;
+          margin-left: 50px; }
+      .body .index .blog-list .item .middle {
+        clear: both;
+        margin-top: 8px; }
+        .body .index .blog-list .item .middle img {
+          width: 181px;
+          height: 138px;
+          float: left; }
+        .body .index .blog-list .item .middle .middle-content {
+          float: left;
+          width: 480px; }
+          .body .index .blog-list .item .middle .middle-content p {
+            padding: 20px 20px 0px;
+            color: #756F71; }
+          .body .index .blog-list .item .middle .middle-content a {
+            margin-top: 20px;
+            margin-right: 10px;
+            padding: 10px;
+            background-color: #fd8a61;
+            float: right;
+            color: #fff;
+            border-radius: 5px; }
+      .body .index .blog-list .item .bottom {
+        margin-top: 10px;
+        float: left;
         height: 20px;
-        background: url(../material/img/ico/arrow-up-c.png) no-repeat;
-        display: inline-block;
-        padding-top: 5px; }
-      footer div p .index {
-        background-size: contain;
-        width: 20px;
-        height: 20px;
-        background: url(../material/img/ico/reply.png) no-repeat;
-        display: inline-block; }
+        width: 100%;
+        background-color: #F1F0EE; }
+        .body .index .blog-list .item .bottom i {
+          background: url(../material/img/ico/time.jpg) no-repeat;
+          width: 16px;
+          height: 14px;
+          background-size: contain;
+          display: block;
+          float: left;
+          margin-left: 10px;
+          margin-top: 3px; }
+        .body .index .blog-list .item .bottom .left-span {
+          float: left;
+          margin-left: 20px;
+          margin-top: 2px; }
+        .body .index .blog-list .item .bottom .right-span {
+          float: left;
+          margin-left: 5px;
+          margin-top: 2px; }
+    .body .index .blog-list .new h4 i {
+      display: block; }
+  .body .index .right {
+    width: 10px;
+    height: 100px;
+    float: left; }
