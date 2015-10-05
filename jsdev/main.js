@@ -6,13 +6,17 @@ seajs.config({
 		"index": "./jsdev/index",
 		"header" : "./component/header",
 		"common" : "./common.js",
-		"api" : "./common/api",
-		"ip" : "http://www.coding123.net/getip.ashx?js=1"
+		"weather" : "./common/weather.js",    // 天气模块
+		"api" : "./api",
+		"ip" : "http://www.coding123.net/getip.ashx?js=1",
+		"city" : "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js",
 	},
 	// 预加载项
 	preload: [
-		'livereload',
-		"ip"
+		"city",
+		'livereload'
+//		"ip",
+		
 	],
 });
 

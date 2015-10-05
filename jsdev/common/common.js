@@ -4,9 +4,6 @@ define(function(require, exports, module){
 	
 	return {
 		ajax: function(url, options) {
-			// 请求接口地址
-			var self = this;
-			
 			// Ajax参数
 			var params = {
 				url: url,
@@ -17,7 +14,6 @@ define(function(require, exports, module){
 				beforeSend: function(XMLHttpRequest) {
 					XMLHttpRequest.setRequestHeader("accept", "application/json");
 					XMLHttpRequest.setRequestHeader("content-type", "application/json");
-					XMLHttpRequest.setRequestHeader("apix-key", "f1eaeff9c29a430f5077cc832a4153db");
 				}
 			}
 			options = $.extend(params, options);
@@ -33,6 +29,20 @@ define(function(require, exports, module){
 			});
 
 			return defer.promise();
+		},
+		get : function(url, options, other){
+			// Ajax参数
+			for(var i in options){
+				url += ("&" + i + "=" +options[i]);
+			}
+			var options = {
+				url: url,
+				type: "GET",
+				dataType: "script"
+			}
+			options = $.extend({}, options, other);
+			// 定义延迟对象
+			$.ajax(options);
 		}
 	}
 });

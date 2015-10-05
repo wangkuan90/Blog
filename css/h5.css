@@ -357,7 +357,8 @@ footer {
   .body .index .blog-list {
     background: url(../material/img/r_line.jpg) repeat-y right;
     width: 740px;
-    float: left; }
+    float: left;
+    margin-bottom: 5px; }
     .body .index .blog-list .item {
       height: 200px;
       margin-top: 25px; }
@@ -378,13 +379,18 @@ footer {
       .body .index .blog-list .item .middle {
         clear: both;
         margin-top: 8px; }
-        .body .index .blog-list .item .middle img {
-          width: 181px;
-          height: 138px;
+        .body .index .blog-list .item .middle figure {
+          width: 189px;
+          height: 144px;
           float: left; }
+          .body .index .blog-list .item .middle figure img {
+            padding: 4px;
+            border: #f4f2f2 1px solid;
+            width: 181px;
+            height: 138px; }
         .body .index .blog-list .item .middle .middle-content {
           float: left;
-          width: 480px; }
+          width: 536px; }
           .body .index .blog-list .item .middle .middle-content p {
             padding: 20px 20px 0px;
             color: #756F71; }
@@ -399,8 +405,8 @@ footer {
       .body .index .blog-list .item .bottom {
         margin-top: 10px;
         float: left;
-        height: 20px;
-        width: 100%;
+        height: 30px;
+        width: 720px;
         background-color: #F1F0EE; }
         .body .index .blog-list .item .bottom i {
           background: url(../material/img/ico/time.jpg) no-repeat;
@@ -410,18 +416,34 @@ footer {
           display: block;
           float: left;
           margin-left: 10px;
-          margin-top: 3px; }
+          margin-top: 7px; }
         .body .index .blog-list .item .bottom .left-span {
           float: left;
           margin-left: 20px;
-          margin-top: 2px; }
+          margin-top: 6px; }
         .body .index .blog-list .item .bottom .right-span {
           float: left;
-          margin-left: 5px;
-          margin-top: 2px; }
+          margin-left: 6px;
+          margin-top: 6px; }
     .body .index .blog-list .new h4 i {
       display: block; }
   .body .index .right {
-    width: 10px;
-    height: 100px;
+    width: 210px;
     float: left; }
+    .body .index .right h4 {
+      font-size: 14px;
+      background: url(../material/img/r_title_bg.jpg) repeat-x 20px center;
+      margin-left: 5px; }
+      .body .index .right h4 p {
+        width: 60px;
+        background-color: #fff;
+        margin: 0; }
+        .body .index .right h4 p span {
+          color: #00F; }
+    .body .index .right .weather {
+      height: 170px;
+      margin-top: 5px; }
+      .body .index .right .weather .content {
+        width: 200px;
+        height: 90px;
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(#DBDBDB), to(#F6F6F6)); }
