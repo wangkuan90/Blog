@@ -1,5 +1,7 @@
 define(function(require, exports, module){
 	
+	"use strict";
+	
 	var common = require("common");
 	var $ = require("$");
 	return {

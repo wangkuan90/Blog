@@ -1,5 +1,7 @@
 define(function(require, exports, module){
 	
+	"use strict";
+	
 	var $ = require("jquery");
 	// 所在位置  remote_ip_info
 	var api = require("api");

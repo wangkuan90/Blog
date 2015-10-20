@@ -1,15 +1,17 @@
 seajs.config({
 	alias: {
-		"jquery": "jquery/jquery-sea-2.1.4.min.js",
-		"$": "jquery/jquery-sea-2.1.4.min.js",
+		"jquery": "jquery/jquery-sea-2.1.4.min",
+		"$": "jquery/jquery-sea-2.1.4.min",
 		"livereload": "http://127.0.0.1:35729/livereload",
 		"index": "./jsdev/index",
+		"router": "my-router",  //自定义路由器
+		"-": "my-underscore",  //自定义方法类
 		"header" : "./component/header",
-		"common" : "./common.js",
-		"weather" : "./common/weather.js",    // 天气模块
+		"weather" : "./common/weather",    // 天气模块
 		"api" : "./api",
 		"ip" : "http://www.coding123.net/getip.ashx?js=1",
 		"city" : "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js",
+		"rout-config" : "./common/router-config"
 	},
 	// 预加载项
 	preload: [
@@ -19,6 +21,5 @@ seajs.config({
 		
 	],
 });
-
 // 加载入口模块
 seajs.use("index");
