@@ -32,6 +32,27 @@ define(function(require, exports, module){
 
 			return defer.promise();
 		},
+		getHtml: function(url) {
+			url = "html/" + url + ".html"; 
+			var params = {
+				url: url,
+				cache: false,
+				type: 'get',
+				dataType: 'html'
+			}
+			// 定义延迟对象
+			var defer = $.Deferred();
+			$.ajax(params)
+			.done(function(res) {
+				defer.resolve(res);
+			})
+			.fail(function(res) {
+				// 失败
+				console.log('something error');
+				defer.reject();
+			});
+			return defer.promise();
+		},
 		get : function(url, options, other){
 			// Ajax参数
 			for(var i in options){
@@ -55,7 +76,7 @@ define(function(require, exports, module){
 			endStr = endStr || "?";
 			targetStr = targetStr || location.href;
 			
-			if(!startStr.contain(startStr)){
+			if(!targetStr.contain(startStr)){
 				return "";
 			}
 			var url = (isContainer ? startStr : "") + targetStr.split(startStr)[1];

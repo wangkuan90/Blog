@@ -2,8 +2,7 @@ seajs.config({
 	alias: {
 		"jquery": "jquery/jquery-sea-2.1.4.min",
 		"$": "jquery/jquery-sea-2.1.4.min",
-		"livereload": "http://127.0.0.1:35729/livereload",
-		"index": "./jsdev/index",
+		"index": "./js/index",
 		"router": "./jar/my-router",  //自定义路由器
 		"-": "./jar/my-underscore",  //自定义方法类
 		"header" : "./component/header",
@@ -15,10 +14,7 @@ seajs.config({
 	},
 	// 预加载项
 	preload: [
-		"city",
-		'livereload'
-//		"ip",
-		
+		"city"
 	],
 });
 // 加载入口模块

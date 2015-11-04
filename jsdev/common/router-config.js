@@ -5,14 +5,26 @@ define(function(require, exports, module){
 	var $ = require("$");
 
 	var RouterConfig = {
-		"index" : function(){
-			alert(1);
+		"#" : {
+			view : "index",
+			container : "#body",
+			html : true,
+			callBack : function(){
+				
+			}
+		},
+		"index" : {
+			view : "index",
+			container : "#body",
+			callBack : function(){
+				
+			}
 		},
 		"other" : function(){
 			alert(2);
 		},
 		config : {
-			"#" : "index",
+			"index" : "index",
 			"other" : "other"
 		}
 	}

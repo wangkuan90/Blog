@@ -1,0 +1,2 @@
+/*! wangkuan - 2015-11-04 14:09:22 */
+define(function(require,exports,module){"use strict";function init(){console.log(SWther)}var api=(require("jquery"),require("api")),city=remote_ip_info.city;api.getWeather(city,init)});

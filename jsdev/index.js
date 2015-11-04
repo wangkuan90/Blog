@@ -4,6 +4,7 @@ define(function(require, exports, module) {
 
 	var $ = require('$');
 	require("-");
+	require("header");
 //	var header = require("header");
 //	require("weather");
 	
@@ -13,6 +14,6 @@ define(function(require, exports, module) {
 	
 	var RouterConfig = require("rout-config");
 	
-	new Router().extend(RouterConfig).start();
+	H5.Router = (new Router()).extend(RouterConfig).start();
 	
 }); 

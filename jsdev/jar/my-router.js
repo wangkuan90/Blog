@@ -4,7 +4,7 @@ define(function(require, exports, module){
 	
 	var $ = require("$");
 	
-	var common = require("../jsdev/common/common");
+	var common = require("../common/common");
 	
 	var Router = function(){
 		this._version = 1.0;
@@ -15,6 +15,11 @@ define(function(require, exports, module){
 		extend : function(obj){
 			return $.extend(true, this, obj); 
 		},
+		render : function(html, back){
+			var container = $(back.container);
+			container.html(html);
+			back.callBack ? back.callBack() : "";
+		},
 		watch : function(){
 			
 			// 得到网址中的参数
@@ -22,7 +27,25 @@ define(function(require, exports, module){
 			// 通过url得到对应要执行的方法
 			var callBack = this.config.hasOwnProperty(url) ? this.config[url] : "index";
 			// 有这个回调函数的话，执行此回调函数
-			this.hasOwnProperty(callBack) ? this[callBack]() : "";
+			var back = {};
+			if(this.hasOwnProperty(callBack)){
+				if(typeof this[callBack] === "function"){
+					var back = this[callBack]();
+				}else if(typeof this[callBack] === "object"){
+					var back = this[callBack];
+				}
+				back = $.extend(true, this["#"], back); 
+			}
+			
+			if(back.html){
+				var self = this;
+				common.getHtml(back.view).then(function(html){
+					self.render(html, back);
+				});
+			}else{
+				var html = back.view;
+				this.render(html, back);
+			}
 		},
 		start : function(){
 			
@@ -35,6 +58,7 @@ define(function(require, exports, module){
 			window.onhashchange = function(){
 				this.watch();
 			}.bind(this);
+			this.watch();
 			return this;
 		},
 		stop : function(){
