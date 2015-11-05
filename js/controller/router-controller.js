@@ -1,0 +1,2 @@
+/*! wangkuan - 2015-11-05 15:25:01 */
+define(function(require,exports,module){"use strict";var RouterController={IndexController:function(){console.log("HomepageController")}};return RouterController});

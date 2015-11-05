@@ -1,2 +1,2 @@
-/*! wangkuan - 2015-11-04 14:09:21 */
-define(function(require,exports,module){"use strict";require("$");require("-"),require("header");var Router=(require("./common/common"),require("router")),RouterConfig=require("rout-config");H5.Router=(new Router).extend(RouterConfig).start()});
+/*! wangkuan - 2015-11-05 15:25:00 */
+define(function(require,exports,module){"use strict";require("-");var Router=require("router"),RouterConfig=require("router-config"),RouterController=require("router-controller");H5.Router=(new Router).config(RouterConfig).controller(RouterController).start()});

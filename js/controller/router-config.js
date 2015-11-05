@@ -1,0 +1,2 @@
+/*! wangkuan - 2015-11-05 15:25:01 */
+define(function(require,exports,module){"use strict";var RouterConfig={"#":{url:"",container:"#body",templateUrl:function(params){return"/html/index.html"},controller:"IndexController"},index:{url:"",container:"#body",templateUrl:function(params){return"/html/index.html"},controller:"IndexController"},blog:{url:"",container:"#body",templateUrl:function(params){return"/html/index.html"},controller:"IndexController"}};return RouterConfig});

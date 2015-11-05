@@ -33,9 +33,8 @@ define(function(require, exports, module){
 			return defer.promise();
 		},
 		getHtml: function(url) {
-			url = "html/" + url + ".html"; 
 			var params = {
-				url: url,
+				url: "./"+url,
 				cache: false,
 				type: 'get',
 				dataType: 'html'
@@ -82,19 +81,19 @@ define(function(require, exports, module){
 			var url = (isContainer ? startStr : "") + targetStr.split(startStr)[1];
 			return url.contain(endStr) ? url.split(endStr)[0] : url + (isContainer ? endStr : "");
 		},
-		getParams : function(url, options, other){
-			// Ajax参数
-			for(var i in options){
-				url += ("&" + i + "=" +options[i]);
+		getParams : function(url){
+			
+			var params = url.substring(url.lastIndexOf('?')+1);
+			var paramsObj = {}, sp = [];
+			if(params.length > 0) {
+				sp = params.split('&');
 			}
-			var options = {
-				url: url,
-				type: "GET",
-				dataType: "script"
+			// 获取url参数
+			for(var i = 0, _l = sp.length; i < _l; i++) {
+				var item = sp[i].split('=');
+				paramsObj[item[0]] = item[1];
 			}
-			options = $.extend({}, options, other);
-			// 定义延迟对象
-			$.ajax(options);
+			return paramsObj;
 		}
 	}
 });

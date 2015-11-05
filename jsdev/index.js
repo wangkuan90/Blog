@@ -2,18 +2,19 @@ define(function(require, exports, module) {
 	
 	"use strict";
 
-	var $ = require('$');
 	require("-");
-	require("header");
+//	require("header");
 //	var header = require("header");
 //	require("weather");
 	
-	var common = require("./common/common");
+//	var common = require("./common/common");
 	
 	var Router = require("router");
 	
-	var RouterConfig = require("rout-config");
+	var RouterConfig = require("router-config");
 	
-	H5.Router = (new Router()).extend(RouterConfig).start();
+	var RouterController = require("router-controller");
+	
+	H5.Router = new Router().config(RouterConfig).controller(RouterController).start();
 	
 }); 

@@ -12,40 +12,35 @@ define(function(require, exports, module){
 	}
 	
 	Router.prototype = {
-		extend : function(obj){
-			return $.extend(true, this, obj); 
+		config : function(config){
+			this.config = config;
+			return this; 
 		},
-		render : function(html, back){
-			var container = $(back.container);
-			container.html(html);
-			back.callBack ? back.callBack() : "";
+		controller : function(controller){
+			this.controller = controller;
+			return this; 
+		},
+		render : function(config){
+			var url = config.templateUrl(common.getParams(location.href));
+			var container = $(config.container);
+			common.getHtml(url).then((function(html){
+				container.html(html);
+				if(config.controller){
+					if(typeof config.controller === "function"){
+						config.controller();
+					}else if(typeof config.controller === "string"){
+						this.controller[config.controller]();
+					}
+				}
+			}).bind(this));
 		},
 		watch : function(){
-			
 			// 得到网址中的参数
 			var url = common.getUrl() || "index";
 			// 通过url得到对应要执行的方法
-			var callBack = this.config.hasOwnProperty(url) ? this.config[url] : "index";
+			var config = this.config.hasOwnProperty(url) ? this.config[url] : this.config["index"];
 			// 有这个回调函数的话，执行此回调函数
-			var back = {};
-			if(this.hasOwnProperty(callBack)){
-				if(typeof this[callBack] === "function"){
-					var back = this[callBack]();
-				}else if(typeof this[callBack] === "object"){
-					var back = this[callBack];
-				}
-				back = $.extend(true, this["#"], back); 
-			}
-			
-			if(back.html){
-				var self = this;
-				common.getHtml(back.view).then(function(html){
-					self.render(html, back);
-				});
-			}else{
-				var html = back.view;
-				this.render(html, back);
-			}
+			this.render(config);
 		},
 		start : function(){
 			

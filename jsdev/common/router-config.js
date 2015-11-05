@@ -14,11 +14,13 @@ define(function(require, exports, module){
 			}
 		},
 		"index" : {
-			view : "index",
+			view : function(params){
+				if(params.step === ""){
+					return "html/index.html";
+				}
+			},
 			container : "#body",
-			callBack : function(){
-				
-			}
+			controller : "homePageController"
 		},
 		"other" : function(){
 			alert(2);
