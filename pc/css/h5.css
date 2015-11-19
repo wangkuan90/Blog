@@ -3820,11 +3820,13 @@ footer div p a i {
 }
 
 footer div p a .top {
-	background: url("../material/img-min/ico/arrow-up-c.png") no-repeat;
+	background: url("../material/img-css-sprite/sprite1446713798172.png") no-repeat;
+	background-position: -0px -0px;
 }
 
 footer div p a .index {
-	background: url("../material/img-min/ico/reply.png") no-repeat;
+	background: url("../material/img-css-sprite/sprite1446713798172.png") no-repeat;
+	background-position: -20px -0px;
 }
 
 /* 导入主页css */
@@ -3871,7 +3873,8 @@ footer div p a .index {
 }
 
 .body .index .blog-list .item h4 i {
-	background: url("../material/img-min/ico/new.gif") no-repeat;
+	background: url("../material/img-css-sprite/sprite1446713798172.png") no-repeat;
+	background-position: -0px -20px;
 	display: none;
 	height: 11px;
 	width: 28px;
@@ -3927,7 +3930,8 @@ footer div p a .index {
 }
 
 .body .index .blog-list .item .bottom i {
-	background: url("../material/img-min/ico/time.jpg") no-repeat;
+	background: url("../material/img-css-sprite/sprite1446713798172.png") no-repeat;
+	background-position: -40px -0px;
 	width: 16px;
 	height: 14px;
 	background-size: contain;
@@ -4067,4 +4071,16 @@ footer div p a .index {
 .body .index .right .weather .content .right-div .con span {
 	margin-left: 14px;
 	font-size: 13px;
+}
+
+/* 导入主页css */
+
+.animate-div {
+	margin: 20px auto auto;
+	width: 560px;
+	padding: 20px;
+}
+
+.animate-div H1 {
+	font-size: 30px;
 }

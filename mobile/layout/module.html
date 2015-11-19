@@ -1,0 +1,27 @@
+<ion-side-menus enable-menu-with-back-views="true">
+      
+  <ion-side-menu-content edge-drag-threshold="false" drag-content="false">
+
+    <ion-nav-bar ng-if="$GC.hasHeadBar" class="bar-calm">
+      <ion-nav-back-button class="button-icon ion-ios7-arrow-back" ng-cloak></ion-nav-back-button>
+      <ion-nav-buttons side="right">
+        <a href="javascript:;" class="c-icon-sidemenu module-nav r1" menu-toggle="right"></a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="view_module"></ion-nav-view>
+  </ion-side-menu-content>
+
+
+  <ion-side-menu side-menu side="right" is-enabled="$sideMenu" ng-cloak>
+    <ion-header-bar class="bar bar-header bar-dark">
+      <h1 class="title">{{ $sideMenuTitle }}</h1>
+    </ion-header-bar>
+    <ion-content has-header="true" class="c-side-content">
+      <ng-include src="$sideMenu"></ng-include>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>
+
+<quick-button ng-if="$GC.hospDomain != 'sczlyy' && $GC.weixin" class="quick-button"></quick-button>
