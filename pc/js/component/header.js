@@ -1,2 +1,2 @@
-/*! wangkuan - 2015-11-05 15:25:01 */
+/*! wangkuan - 2015-11-28 09:23:37 */
 define(function(require,exports,module){"use strict";var $=require("jquery"),view=$("header"),tabView=view.find("[sid=tab-title]"),tabChild=tabView.children(),Header={mouseOverEvent:function(e){var em=$(this).find("em");em.stop(),em.slideDown(400)},mouseOutEvent:function(e){var em=$(this).find("em");em.stop(),em.slideUp(400)},setTabTitle:function(index){index=index?index:0,$(tabChild[index]).addClass("on").siblings().removeClass("on")},init:function(){for(var i=0;i<tabChild.length;i++)$(tabChild[i]).on("mouseover",this.mouseOverEvent),$(tabChild[i]).on("mouseout",this.mouseOutEvent);return tabView.find("em").hide(),this.setTabTitle(),this}};return Header.init()});

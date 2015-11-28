@@ -1,2 +1,2 @@
-/*! wangkuan - 2015-11-05 15:25:01 */
+/*! wangkuan - 2015-11-28 09:23:38 */
 define(function(require,exports,module){"use strict";var RouterConfig=(require("$"),{"#":{view:"index",container:"#body",html:!0,callBack:function(){}},index:{view:function(params){return""===params.step?"html/index.html":void 0},container:"#body",controller:"homePageController"},other:function(){alert(2)},config:{index:"index",other:"other"}});return RouterConfig});

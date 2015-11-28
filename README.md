@@ -1,9 +1,14 @@
-第一次执行gulp 
-开发过程中使用gulp watch命令
+### 打包命令:
+1：gulp命令  分为手机端代码和pc端打包
+2：准备工作   ***
+
+### 开发命令:
+1：PC机端开发   gulp watch-pc
+2：手机机端开发   gulp watch-m
 
 ### css模块:
 1: 在`animate.less`中引入第三方animate.css
-
+    
 ### js模块：
 1:lib
 	1: 模块化开发，使用sea.js
@@ -25,10 +30,3 @@ define(function(require, exports, module){
 ### 上线部署
 1: 修改less/config.less  @imgfile --> img-min
 2：执行 gulp 命令
-
-
-//``` html
-//<script src="jquery.js"></script>
-//<script src="my-jquery-plugin.js"></script>
-//<script src="my-app-that-uses-plugin.js"></script>
-//```

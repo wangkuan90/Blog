@@ -1,2 +1,2 @@
-/*! wangkuan - 2015-11-05 15:25:00 */
+/*! wangkuan - 2015-11-28 09:23:37 */
 define(function(require,exports,module){"use strict";var common=require("common");require("$");return{getWeather:function(city,callback){common.get("http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&day=2&dfc=3",{city:city},{scriptCharset:"gbk",success:callback})}}});

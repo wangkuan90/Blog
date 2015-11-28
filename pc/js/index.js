@@ -1,2 +1,2 @@
-/*! wangkuan - 2015-11-05 15:25:00 */
+/*! wangkuan - 2015-11-28 09:23:37 */
 define(function(require,exports,module){"use strict";require("-");var Router=require("router"),RouterConfig=require("router-config"),RouterController=require("router-controller");H5.Router=(new Router).config(RouterConfig).controller(RouterController).start()});
