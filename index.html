@@ -31,6 +31,10 @@
             left: 50%;
             margin-left: -30px;
         }
+        
+        img {
+            width: 100%;
+        }
     </style>
     <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=sdRjUvngwImdkL3oGpcGvmMS8DOWeHSH"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.min.css" />
@@ -117,46 +121,50 @@
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="./src/map.js"></script>
     <script>
-        // var homePageUrl = 'http://127.0.0.1:5500/index.html';
-        // if (location.href !== homePageUrl) {
-        //     location.href = homePageUrl;
-        // }
-        setTimeout(function() {
-            document.getElementById('music').play();
-        }, 3000);
-        var fl = new fullpage('#fullpage', {
-            autoScrolling: true,
-            scrollHorizontally: true,
-            afterLoad: function(origin) {
-                var loadedSlide = this;
-                //第二节的第一张幻灯片
-                if (!origin) {
-                    fullpage_api.setAllowScrolling(false);
-                    setTimeout(() => {
-                        // 页面自动滚动到第二章
-                        fl.moveSectionDown();
-                    }, 5000);
-                }
+        // var homePageUrl = 'http://wangkuan90.github.io/';
+        var homePageUrl = 'http://127.0.0.1:5500/index.html';
+        if (location.href !== homePageUrl) {
+            location.href = homePageUrl;
+        }
+        $(document).ready(function() {
+            setTimeout(function() {
+                document.getElementById('music').play();
+            }, 10000);
+            var fl = new fullpage('#fullpage', {
+                autoScrolling: true,
+                scrollHorizontally: true,
+                afterLoad: function(origin) {
+                    var loadedSlide = this;
+                    //第二节的第一张幻灯片
+                    if (!origin) {
+                        fullpage_api.setAllowScrolling(false);
+                        setTimeout(() => {
+                            // 页面自动滚动到第二章
+                            fl.moveSectionDown();
+                        }, 5000);
+                    }
 
-                //第二节的第一张幻灯片
-                if (origin && origin.anchor == 'start') {
-                    initMap();
+                    //第二节的第一张幻灯片
+                    if (origin && origin.anchor == 'start') {
+                        initMap();
+                    }
+                    //第二节的第一张幻灯片
+                    if (origin && origin.anchor == 'map') {
+                        fullpage_api.setAllowScrolling(true);
+                        fullpage_api.setAllowScrolling(false, 'up');
+                    }
+                    //离开第二节后
+                    if (origin && origin.index === 1) {
+                        fullpage_api.setAllowScrolling(true);
+                        fullpage_api.setAllowScrolling(false, 'up');
+                    } else if (origin && origin.index >= 2) {
+                        fullpage_api.setAllowScrolling(true, 'up');
+                    }
                 }
-                //第二节的第一张幻灯片
-                if (origin && origin.anchor == 'map') {
-                    fullpage_api.setAllowScrolling(true);
-                    fullpage_api.setAllowScrolling(false, 'up');
-                }
-                //离开第二节后
-                if (origin && origin.index === 1) {
-                    fullpage_api.setAllowScrolling(true);
-                    fullpage_api.setAllowScrolling(false, 'up');
-                } else if (origin && origin.index >= 2) {
-                    fullpage_api.setAllowScrolling(true, 'up');
-                }
-            }
+            });
         });
     </script>
 </body>
