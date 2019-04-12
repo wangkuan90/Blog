@@ -1,0 +1,8 @@
+{
+  "name": "wangkuan90.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wangkuan90/wangkuan90.github.io.git",
+  "author": "wangkuan <wangkuan@souche.com>",
+  "license": "MIT"
+}
