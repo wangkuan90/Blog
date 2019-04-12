@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function() {
+            var story = document.getElementById('word');
+            var s = document.getElementById('show');
+            var i = 0;
+            timer = setInterval(function() {
+                s.innerHTML = story.innerHTML.substring(0, i);
+                i++;
+                if (s.innerHTML == story.innerHTML) {
+                    clearInterval(timer);
+                }
+            }, 200);
+        }
+    </script>
+</head>
+
+<body>
+    <p id="word" style="display:none;">大家好，我是东，来自南方。</p>
+    <p id="show"></p>
+</body>
+
+</html>
