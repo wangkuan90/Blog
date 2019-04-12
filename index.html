@@ -25,13 +25,9 @@
             color: #2f2f2f;
         }
         
-        audio {
-            display: none;
-        }
-        
         .downico {
             position: absolute;
-            bottom: 20px;
+            bottom: 60px;
             left: 50%;
             margin-left: -30px;
         }
@@ -114,7 +110,9 @@
                 <p>我们是游戏里朋友，或许暂时分别，但我们还有那些日夜，那些约定，那些相遇。那些说不完的故事，忘不掉!接下来，我会去现实世界中去找你！那时候，我会跟你说：丝丝，我是王宽,也是你的好朋友薇薇!</p>
             </div>
         </div>
-        <audio id="music" src="http://img.souche.com/f2e/6717d4ff2a28851b4ec75552e7f8b230.mp3" loop="loop"></audio>
+        <audio id="music" src="http://img.souche.com/f2e/6717d4ff2a28851b4ec75552e7f8b230.mp3"></audio>
+
+        <!-- <audio id="music" src="http://img.souche.com/f2e/6717d4ff2a28851b4ec75552e7f8b230.mp3" loop="loop"></audio> -->
     </div>
 
 
@@ -125,10 +123,9 @@
         // if (location.href !== homePageUrl) {
         //     location.href = homePageUrl;
         // }
-        var audio = document.getElementById('music');
         setTimeout(function() {
-            audio.play();
-        }, 1000);
+            document.getElementById('music').play();
+        }, 3000);
         var fl = new fullpage('#fullpage', {
             autoScrolling: true,
             scrollHorizontally: true,
@@ -140,7 +137,7 @@
                     setTimeout(() => {
                         // 页面自动滚动到第二章
                         fl.moveSectionDown();
-                    }, 3000);
+                    }, 5000);
                 }
 
                 //第二节的第一张幻灯片
@@ -156,7 +153,7 @@
                 if (origin && origin.index === 1) {
                     fullpage_api.setAllowScrolling(true);
                     fullpage_api.setAllowScrolling(false, 'up');
-                } else if (origin && origin.index > 2) {
+                } else if (origin && origin.index >= 2) {
                     fullpage_api.setAllowScrolling(true, 'up');
                 }
             }
