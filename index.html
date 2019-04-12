@@ -32,7 +32,7 @@
             margin-left: -30px;
         }
         
-        img {
+        .aimg {
             width: 100%;
         }
     </style>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="section" data-anchor="img1">
-            <img src="./img/friend.jpeg" />
+            <img class="aimg" src="./img/friend.jpeg" />
         </div>
         <div class="section" data-anchor="content2">
             <div class="content">
@@ -80,10 +80,10 @@
             </div>
         </div>
         <div class="section" data-anchor="img2">
-            <img src="./img/img1.png" />
+            <img class="aimg" src="./img/img1.png" />
         </div>
         <div class="section" data-anchor="img3">
-            <img src="./img/img2.png" />
+            <img class="aimg" src="./img/img2.png" />
         </div>
         <div class="section" data-anchor="content5">
             <div class="content">
@@ -94,7 +94,7 @@
             </div>
         </div>
         <div class="section" data-anchor="img4">
-            <img src="./img/ddd.png" />
+            <img class="aimg" src="./img/ddd.png" />
         </div>
         <div class="section" data-anchor="content6">
             <div class="content">
@@ -104,7 +104,7 @@
             </div>
         </div>
         <div class="section" data-anchor="img5">
-            <img src="./img/ff.png" />
+            <img class="aimg" src="./img/ff.png" />
         </div>
         <div class="section" data-anchor="content7">
             <div class="content">
@@ -124,8 +124,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="./src/map.js"></script>
     <script>
-        var homePageUrl = 'http://wangkuan90.github.io/';
-        // var homePageUrl = 'http://127.0.0.1:5500/index.html';
+        // var homePageUrl = 'http://wangkuan90.github.io/';
+        var homePageUrl = 'http://127.0.0.1:5500/index.html';
         if (location.href !== homePageUrl) {
             location.href = homePageUrl;
         }
@@ -133,7 +133,7 @@
             setTimeout(function() {
                 document.getElementById('music').play();
             }, 10000);
-            var fl = new fullpage('#fullpage', {
+            window.fl = new fullpage('#fullpage', {
                 autoScrolling: true,
                 scrollHorizontally: true,
                 afterLoad: function(origin) {
